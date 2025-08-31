@@ -11,32 +11,58 @@ import Footer from "@/components/footer"
 import ChatbotButton from "@/components/chatbot-button"
 import { useToast } from "@/components/ui/use-toast"
 
-// Fallback prediction results in case the API fails
-const fallbackResults = [
-  {
-    section: "IPC 420",
-    description: "Cheating and dishonestly inducing delivery of property",
-    confidence: 98,
-    punishment:
-      "Imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
-    relevance: "The case involves deception to obtain property, which is a key element of IPC 420.",
-  },
-  {
-    section: "IPC 406",
-    description: "Punishment for criminal breach of trust",
-    confidence: 85,
-    punishment:
-      "Imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
-    relevance: "The property was entrusted to the accused who then misappropriated it, constituting a breach of trust.",
-  },
-  {
-    section: "IPC 34",
-    description: "Acts done by several persons in furtherance of common intention",
-    confidence: 72,
-    punishment: "Each person is liable for the act in the same manner as if it were done by him alone.",
-    relevance: "Multiple individuals were involved in the execution of the offense with a shared intention.",
-  },
-]
+// Dynamic fallback results based on user input
+function generateDynamicFallback(description: string) {
+  const lowerDesc = description.toLowerCase()
+  
+  // Analyze the description to provide relevant fallback suggestions
+  if (lowerDesc.includes("theft") || lowerDesc.includes("steal") || lowerDesc.includes("stolen")) {
+    return [
+      {
+        section: "IPC 378",
+        description: "Theft",
+        confidence: 75,
+        punishment: "Imprisonment of either description for a term which may extend to three years, or with fine, or with both.",
+        relevance: "Based on your description mentioning theft, this section appears most relevant. Please consult a legal professional for confirmation."
+      }
+    ]
+  }
+  
+  if (lowerDesc.includes("assault") || lowerDesc.includes("attack") || lowerDesc.includes("hit")) {
+    return [
+      {
+        section: "IPC 351",
+        description: "Assault",
+        confidence: 75,
+        punishment: "Imprisonment of either description for a term which may extend to three months, or with fine which may extend to five hundred rupees, or with both.",
+        relevance: "Your description suggests physical violence, making this section potentially applicable. Legal consultation is recommended."
+      }
+    ]
+  }
+  
+  if (lowerDesc.includes("fraud") || lowerDesc.includes("cheat") || lowerDesc.includes("deceive")) {
+    return [
+      {
+        section: "IPC 420",
+        description: "Cheating and dishonestly inducing delivery of property",
+        confidence: 75,
+        punishment: "Imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+        relevance: "The deceptive nature of your case suggests this section may be relevant. Please seek legal advice for accurate assessment."
+      }
+    ]
+  }
+  
+  // Generic fallback for other cases
+  return [
+    {
+      section: "IPC 420",
+      description: "Cheating and dishonestly inducing delivery of property",
+      confidence: 60,
+      punishment: "Imprisonment of either description for a term which may extend to seven years, and shall also be liable to fine.",
+      relevance: "This is a general section that may apply. For accurate legal advice, please consult with a qualified legal professional."
+    }
+  ]
+}
 
 export default function PredictionResultPage() {
   const [activeTab, setActiveTab] = useState("sections")
@@ -100,19 +126,23 @@ export default function PredictionResultPage() {
   const handleFetchError = (errorMessage) => {
     toast({
       title: "Prediction Notice",
-      description: `${errorMessage}. Using sample predictions for demonstration.`,
+      description: `${errorMessage}. Using fallback predictions based on your description.`,
       variant: "destructive",
     })
 
-    // Use fallback data
+    // Generate dynamic fallback based on user's description
+    const fallbackResults = predictionData?.description 
+      ? generateDynamicFallback(predictionData.description)
+      : generateDynamicFallback("general case")
+    
     setPredictionResults(fallbackResults)
     setIsLoading(false)
 
     // If no prediction data, create a placeholder
     if (!predictionData) {
       setPredictionData({
-        incidentType: "sample",
-        description: "This is a sample case description for demonstration purposes.",
+        incidentType: "general",
+        description: "General case analysis based on available information.",
       })
     }
   }

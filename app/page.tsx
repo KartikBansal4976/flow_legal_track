@@ -60,6 +60,88 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        {/* Blockchain Integration Section */}
+        <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center rounded-full bg-blue-600/10 px-3 py-1 text-sm text-blue-600 dark:text-blue-400 mb-4">
+                Blockchain Powered
+              </div>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Tamper-Proof FIR System</h2>
+              <p className="text-lg section-text max-w-2xl mx-auto">
+                Our blockchain integration ensures that all FIRs are securely stored and cannot be altered or deleted
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-2 mt-1 shrink-0">
+                    <CheckCircle className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Immutable Records</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Once registered on the blockchain, FIR records cannot be tampered with, ensuring data integrity and trust.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-2 mt-1 shrink-0">
+                    <CheckCircle className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Transparent Process</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Track the status of your FIR in real-time with complete transparency through the blockchain.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-600 rounded-full p-2 mt-1 shrink-0">
+                    <CheckCircle className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-2">Authorized Updates</h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Only verified police officers can update the status of FIRs, ensuring proper chain of custody.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-8">
+                  <Button className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                    <a href="/view-firs">
+                      View Blockchain FIRs <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 opacity-80"></div>
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="text-white text-center space-y-6">
+                    <h3 className="text-2xl font-bold">Blockchain + Legal = Future of Justice</h3>
+                    <p className="text-lg">
+                      Our platform combines the power of blockchain technology with legal processes to create a secure, transparent, and efficient system for FIR management.
+                    </p>
+                    <div className="pt-4">
+                      <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" asChild>
+                        <a href="/file-fir">
+                          Register FIR on Blockchain
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* How It Works Section with Flowchart */}
         <section className="py-16 px-4 bg-white/70 backdrop-blur-sm dark:bg-black/30">

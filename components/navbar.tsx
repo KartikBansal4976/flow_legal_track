@@ -54,6 +54,9 @@ export default function Navbar() {
           >
             <NavLink href="/predict" label="IPC Prediction" />
             <NavLink href="/file-fir" label="File FIR" />
+            <NavLink href="/view-firs" label="View FIRs" />
+            <NavLink href="/update-fir" label="Update FIR" />
+            <NavLink href="/manage-officers" label="Manage Officers" />
             <NavLink href="/handbook" label="IPC Handbook" />
             <NavLink href="/support" label="Support" />
             <NavLink href="/about" label="About Us" />
@@ -110,6 +113,9 @@ export default function Navbar() {
               <nav className="flex flex-col space-y-4">
                 <NavLinkMobile href="/predict" label="IPC Prediction" setIsMenuOpen={setIsMenuOpen} />
                 <NavLinkMobile href="/file-fir" label="File FIR" setIsMenuOpen={setIsMenuOpen} />
+                <NavLinkMobile href="/view-firs" label="View FIRs" setIsMenuOpen={setIsMenuOpen} />
+                <NavLinkMobile href="/update-fir" label="Update FIR" setIsMenuOpen={setIsMenuOpen} />
+                <NavLinkMobile href="/manage-officers" label="Manage Officers" setIsMenuOpen={setIsMenuOpen} />
                 <NavLinkMobile href="/handbook" label="IPC Handbook" setIsMenuOpen={setIsMenuOpen} />
                 <NavLinkMobile href="/support" label="Support" setIsMenuOpen={setIsMenuOpen} />
                 <NavLinkMobile href="/about" label="About Us" setIsMenuOpen={setIsMenuOpen} />

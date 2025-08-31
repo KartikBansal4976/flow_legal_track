@@ -31,6 +31,9 @@ export default function ChatbotButton() {
     setIsLoading(true)
 
     try {
+      console.log("Sending message to API:", message);
+      console.log("Chat history:", chatHistory);
+      
       // Call your API route
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -42,11 +45,17 @@ export default function ChatbotButton() {
         }),
       })
 
+      console.log("API Response status:", response.status);
+      console.log("API Response ok:", response.ok);
+
       if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`)
+        const errorText = await response.text();
+        console.error("API Error response:", errorText);
+        throw new Error(`API request failed with status ${response.status}: ${errorText}`)
       }
 
       const data = await response.json()
+      console.log("API Response data:", data);
       setChatHistory(prev => [...prev, data])
     } catch (error) {
       console.error("Error calling API:", error)
