@@ -190,5 +190,5 @@ Manage Officers (Admins can add/remove officers)
 
 Demo & Screenshots
 Demo: https://1drv.ms/v/c/e44270becb740185/EaMsDn5zQ5xCuJVl09vXctEB2A4uGFZPMq6jWKbeDKjuyA?e=UPTs0c
-screenshort: https://1drv.ms/v/c/e44270becb740185/EaMsDn5zQ5xCuJVl09vXctEB2A4uGFZPMq6jWKbeDKjuyA?e=UPTs0c
+screenshort: https://1drv.ms/f/c/e44270becb740185/EqJyOk90KhRGg6zZg9Epc8IB_VGRO6VcY-z-c96NNxzBpQ?e=G3QxOO
 ppt: https://gamma.app/docs/LEGALTRACK-Revolutionizing-FIR-Filing-evufj3uu6z7ge3l
