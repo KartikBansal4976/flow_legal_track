@@ -26,8 +26,6 @@ LegalTrack4 solves these challenges by combining **AI, decentralized storage, an
 - 🔗 **Blockchain Integration** – Stores FIR CIDs on Flow blockchain (immutable, tamper-proof).  
 - 📂 **IPFS Storage** – Decentralized FIR storage with unique content hashes.  
 - 📞 **Emergency Support** – Contact police/lawyers instantly.  
-- 📅 **Lawyer Booking** – Real-time lawyer appointment system.  
-- 📊 **Dashboards** – Analytics, charts, and visualization for better legal insights.  
 
 ---
 
@@ -169,17 +167,9 @@ Manage Officers (Admins can add/remove officers)
 
 🗣️ Voice-to-Text FIR Filing
 
-🎯 Fuzzy Name Matching
-
 📋 Legal AI Chatbot
 
-📍 Location-Aware Services
-
 📞 Emergency Numbers Integration
-
-📅 Lawyer Appointment Booking
-
-📊 Charts & Dashboard Visualizations
 
 🧾 PDF FIR Generation
 
