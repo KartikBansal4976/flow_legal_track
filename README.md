@@ -1,4 +1,6 @@
 # ⚖️ LegalTrack4
+WATCH LIVE(Frontend)
+https://legaltrackhost-12ep.vercel.app/
 
 LegalTrack4 is an **AI + Blockchain powered legal tech platform** designed to modernize and simplify the legal process — from **FIR assistance to legal support services** — all in one place.  
 
